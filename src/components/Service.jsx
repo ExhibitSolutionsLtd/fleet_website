@@ -3,12 +3,12 @@ import { FaVectorSquare } from "react-icons/fa";
 import { FaPenToSquare } from "react-icons/fa6";
 import { BiSolidDollarCircle } from "react-icons/bi";
 import { FaHandsHelping } from "react-icons/fa";
-import { FaShieldAlt } from "react-icons/fa"; // Import new icon for the additional card
+import { FaShieldAlt, FaUserShield } from "react-icons/fa"; // Import new icon
 
 const ServiceCard = [
   {
     id: 1,
-    title: "Luxury Facilities",
+    title: "Tracking Device",
     description:
       "Elevate your fleet management with our state-of-the-art facilities, providing cutting-edge technology for vehicle tracking, maintenance, and driver management. Ensure your fleet operates at its best with our advanced systems and services.",
     icon: <FaVectorSquare className="text-white text-2xl" />,
@@ -16,7 +16,7 @@ const ServiceCard = [
   },
   {
     id: 2,
-    title: "Quality Products",
+    title: "Fuel sensors",
     description:
       "Benefit from our premium fleet management tools and technologies, including GPS tracking, AI cameras, and fuel sensors. Our high-quality products are meticulously selected to offer the best in performance, reliability, and innovation.",
     icon: <FaPenToSquare className="text-white text-2xl" />,
@@ -39,11 +39,19 @@ const ServiceCard = [
     link: "#",
   },
   {
-    id: 5, // New card ID
+    id: 5,
     title: "Comprehensive Security",
     description:
       "Protect your fleet with our advanced security systems, including AI-powered cameras and real-time alerts. Monitor unauthorized access and prevent theft with cutting-edge technology designed to keep your assets safe.",
-    icon: <FaShieldAlt className="text-white text-2xl" />, // New icon for security
+    icon: <FaShieldAlt className="text-white text-2xl" />,
+    link: "#",
+  },
+  {
+    id: 6, // New card ID
+    title: "Driver Performance Monitoring",
+    description:
+      "Enhance safety and efficiency by monitoring driver behavior with real-time analytics. Identify risky driving patterns, track driver fatigue, and ensure compliance with safety standards to maintain a high level of fleet performance.",
+    icon: <FaUserShield className="text-white text-2xl" />, // New icon for driver monitoring
     link: "#",
   },
 ];
@@ -53,7 +61,7 @@ const Services = () => {
     <div className="container py-20">
       {/* heading title */}
       <div className="space-y-2 text-center max-w-[350px] mx-auto mb-8">
-        <h1 className="text-3xl font-bold font-serif text-light-blue-600">
+        <h1 className="text-3xl font-bold text-light-blue-600">
           What We Provide
         </h1>
         <p className="text-gray-600 text-sm">
@@ -61,7 +69,7 @@ const Services = () => {
         </p>
       </div>
       {/* card section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {ServiceCard.map((card) => (
           <div
             key={card.id}
@@ -74,7 +82,7 @@ const Services = () => {
               </span>
             </div>
             {/* Card title */}
-            <p className="text-2xl font-bold font-serif text-light-blue-600">
+            <p className="text-2xl font-bold text-light-blue-600">
               {card.title}
             </p>
             {/* Card description */}
@@ -87,4 +95,3 @@ const Services = () => {
 };
 
 export default Services;
-
